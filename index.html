@@ -7,11 +7,11 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon-v2.svg" />
 
-  <meta name="description" content="Tarik Gungor — IT Support & Infrastructure-Focused Technologist. Bridging technology, infrastructure, and real-world business operations." />
+  <meta name="description" content="Tarik Gungor — IT Support &amp; Infrastructure-Focused Technologist. Bridging technology, infrastructure, and real-world business operations." />
   <meta name="theme-color" content="#0e0e0e" />
 
-  <meta property="og:title" content="Tarik Gungor — IT Support & Infrastructure" />
-  <meta property="og:description" content="IT Support & infrastructure-focused technologist. Projects, experience, and contact." />
+  <meta property="og:title" content="Tarik Gungor — IT Support &amp; Infrastructure" />
+  <meta property="og:description" content="IT Support &amp; infrastructure-focused technologist. Projects, experience, and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tarikgungor.com/" />
 
@@ -307,23 +307,23 @@
 
     // theme toggle
     const toggleBtn = document.getElementById("themeToggle");
-    const iconEl = toggleBtn.querySelector(".icon");
-    const labelEl = toggleBtn.querySelector(".label");
+    const iconEl = toggleBtn?.querySelector(".icon");
+    const labelEl = toggleBtn?.querySelector(".label");
 
     function applyTheme(mode) {
       const isLight = mode === "light";
       document.body.classList.toggle("light", isLight);
       localStorage.setItem("theme", isLight ? "light" : "dark");
 
-      iconEl.textContent = isLight ? "☀" : "☾";
-      labelEl.textContent = isLight ? "Light" : "Dark";
+      if (iconEl) iconEl.textContent = isLight ? "☀" : "☾";
+      if (labelEl) labelEl.textContent = isLight ? "Light" : "Dark";
     }
 
-    // load preference
+    // load preference (default: dark)
     const saved = localStorage.getItem("theme");
     applyTheme(saved === "light" ? "light" : "dark");
 
-    toggleBtn.addEventListener("click", () => {
+    toggleBtn?.addEventListener("click", () => {
       const next = document.body.classList.contains("light") ? "dark" : "light";
       applyTheme(next);
     });
