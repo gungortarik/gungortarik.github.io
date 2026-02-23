@@ -419,3 +419,39 @@ a.card::before{
   .avatar{ width: 130px; height: 130px; }
 }
 
+/* ===== Hero Trust Strip (Fixed) ===== */
+
+.hero-trust{
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-trust span{
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  border: 1px solid var(--line);              /* FIX: var(--border) yerine */
+  background: color-mix(in srgb, var(--bg2) 55%, transparent);
+  box-shadow: var(--shadow-soft);
+
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.hero-trust span:hover{
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg2));
+}
+
+body.light .hero-trust span{
+  background: color-mix(in srgb, var(--bg2) 75%, transparent);
+}
