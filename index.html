@@ -19,13 +19,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="topbar">
     <div class="container">
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav">
         <a class="brand" href="#top">
           <span class="dot" aria-hidden="true"></span>
           <span>Tarik Gungor</span>
@@ -49,6 +49,7 @@
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-wrap">
         <div class="hero-left">
@@ -64,7 +65,14 @@
           <div class="actions">
             <a class="btn primary" href="#projects">View Projects</a>
             <a class="btn" href="#contact">Contact</a>
-            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+
+            <!-- View + Download -->
+            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" target="_blank" rel="noopener">
+              View Resume
+            </a>
+            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" download>
+              Download Resume
+            </a>
           </div>
 
           <div class="hero-trust" aria-label="Highlights">
@@ -80,6 +88,7 @@
       </div>
     </section>
 
+    <!-- WHAT I DO -->
     <section class="section" id="what">
       <div class="container">
         <h2>What I Do</h2>
@@ -131,6 +140,7 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container">
         <h2>Selected Projects</h2>
@@ -180,6 +190,7 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section class="section" id="experience">
       <div class="container">
         <h2>Experience</h2>
@@ -213,6 +224,7 @@
       </div>
     </section>
 
+    <!-- EDUCATION -->
     <section class="section" id="education">
       <div class="container">
         <h2>Education</h2>
@@ -238,6 +250,7 @@
       </div>
     </section>
 
+    <!-- TECHNICAL -->
     <section class="section" id="technical">
       <div class="container">
         <h2>Technical Focus</h2>
@@ -267,6 +280,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
         <h2>Contact</h2>
@@ -280,9 +294,16 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
-      <div class="container">
-        © <span id="y"></span> Tarik Gungor • Built with HTML &amp; CSS
+      <div class="container footer-wrap">
+        <div>© <span id="y"></span> Tarik Gungor • Built with HTML &amp; CSS</div>
+
+        <div class="footer-actions">
+          <a href="assets/docs/Tarik_Gungor_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a href="assets/docs/Tarik_Gungor_Resume.pdf" download>Download Resume</a>
+        </div>
       </div>
     </footer>
   </main>
@@ -293,22 +314,25 @@
 
     // theme toggle
     const toggleBtn = document.getElementById("themeToggle");
-    const iconEl = toggleBtn.querySelector(".icon");
-    const labelEl = toggleBtn.querySelector(".label");
+    const iconEl = toggleBtn?.querySelector(".icon");
+    const labelEl = toggleBtn?.querySelector(".label");
 
     function applyTheme(mode) {
       const isLight = mode === "light";
       document.body.classList.toggle("light", isLight);
       localStorage.setItem("theme", isLight ? "light" : "dark");
-      iconEl.textContent = isLight ? "☀" : "☾";
-      labelEl.textContent = isLight ? "Light" : "Dark";
+
+      if (iconEl) iconEl.textContent = isLight ? "☀" : "☾";
+      if (labelEl) labelEl.textContent = isLight ? "Light" : "Dark";
     }
 
+    // load preference (default: dark)
     const saved = localStorage.getItem("theme");
     applyTheme(saved === "light" ? "light" : "dark");
 
-    toggleBtn.addEventListener("click", () => {
-      applyTheme(document.body.classList.contains("light") ? "dark" : "light");
+    toggleBtn?.addEventListener("click", () => {
+      const next = document.body.classList.contains("light") ? "dark" : "light";
+      applyTheme(next);
     });
   </script>
 </body>
