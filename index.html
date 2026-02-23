@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Tarik Gungor — IT Support & Infrastructure Specialist</title>
 
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon-v2.svg" />
   <link rel="canonical" href="https://tarikgungor.com/" />
 
@@ -34,10 +36,35 @@
   />
   <meta name="twitter:image" content="https://tarikgungor.com/assets/img/preview.jpg" />
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tarik Gungor",
+    "url": "https://tarikgungor.com/",
+    "image": "https://tarikgungor.com/assets/img/profile.jpg",
+    "jobTitle": "IT Support & Infrastructure Specialist",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "Ontario",
+      "addressCountry": "Canada"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/tarikgungor",
+      "https://github.com/gungortarik"
+    ]
+  }
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -56,10 +83,18 @@
             <a href="#what">What I Do</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
+            <a href="#volunteer">Volunteer</a>
+            <a href="#education">Education</a>
             <a href="#contact">Contact</a>
           </div>
 
-          <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <button
+            class="themeToggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
             <span class="icon" aria-hidden="true">☾</span>
             <span class="label">Dark</span>
           </button>
@@ -86,14 +121,20 @@
             <a class="btn primary" href="#projects">View Projects</a>
             <a class="btn" href="#contact">Contact</a>
 
-            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
-            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" download>Download Resume</a>
+            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" target="_blank" rel="noopener">
+              View Resume
+            </a>
+            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" download>
+              Download Resume
+            </a>
           </div>
 
           <div class="hero-trust" aria-label="Highlights">
             <span>50+ Endpoint Configurations</span>
             <span>Network Segmentation</span>
             <span>Ubuntu VM Lab</span>
+            <span>38 Devices (BETA PREP)</span>
+            <span>23 Devices (Bestof Floor)</span>
           </div>
         </div>
 
@@ -108,7 +149,8 @@
       <div class="container">
         <h2>What I Do</h2>
         <p>
-          I support end users, build reliable infrastructure, and bring a practical operations mindset from managing real-world business environments.
+          I support end users, build reliable infrastructure, and bring a practical operations mindset from managing
+          real-world business environments.
         </p>
 
         <div class="grid">
@@ -218,7 +260,8 @@
               <div class="when">BETA PREP • Toronto • Dec 2024 – Present</div>
             </div>
             <p>
-              Supporting internal systems, operational workflows, and infrastructure reliability in a hybrid business environment.
+              Supporting internal systems, operational workflows, and infrastructure reliability in a hybrid business
+              environment (38 devices).
             </p>
           </div>
 
@@ -228,7 +271,8 @@
               <div class="when">Bestof Floor LTD • Sep 2023 – Present</div>
             </div>
             <p>
-              Network administration support, device management, and day-to-day technical troubleshooting across business operations.
+              Network administration support, device management, and day-to-day technical troubleshooting across
+              business operations (23 devices).
             </p>
           </div>
 
@@ -238,7 +282,8 @@
               <div class="when">Payment Source • Apr 2023 – Jul 2023</div>
             </div>
             <p>
-              Worked with ManageEngine Endpoint Central and mobile device management systems. Contributed to 50+ device configurations and supported endpoint monitoring and structured device policy deployment.
+              Used ManageEngine Endpoint Central and MDM systems. Contributed to 50+ device configurations and supported
+              endpoint monitoring and structured device policy deployment.
             </p>
           </div>
         </div>
@@ -254,13 +299,12 @@
         <div class="list">
           <div class="item">
             <div class="row">
-              <div class="role">
-                IT Analyst <span class="badge">Volunteer</span>
-              </div>
+              <div class="role">IT Analyst <span class="badge">Volunteer</span></div>
               <div class="when">CentreCanada Newcomer Services Society • Oct 2023 – Present</div>
             </div>
             <p>
-              Supporting IT operations and troubleshooting for community services, with an emphasis on reliability and user support.
+              Supporting IT operations and troubleshooting for community services, with an emphasis on reliability and
+              user support.
             </p>
           </div>
         </div>
@@ -287,7 +331,10 @@
               <div class="role">Computer &amp; Information Sciences (Support Services)</div>
               <div class="when">British Columbia Institute of Technology • 2023</div>
             </div>
-            <p>Practical training in Active Directory, network administration, device support, and enterprise IT environments.</p>
+            <p>
+              Practical training in Active Directory, network administration, device support, and enterprise IT
+              environments.
+            </p>
           </div>
         </div>
       </div>
@@ -353,7 +400,8 @@
 
   <script>
     // footer year
-    document.getElementById("y").textContent = new Date().getFullYear();
+    const yearEl = document.getElementById("y");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // theme toggle
     const toggleBtn = document.getElementById("themeToggle");
@@ -369,7 +417,6 @@
       if (labelEl) labelEl.textContent = isLight ? "Light" : "Dark";
     }
 
-    // load preference (default: dark)
     const saved = localStorage.getItem("theme");
     applyTheme(saved === "light" ? "light" : "dark");
 
