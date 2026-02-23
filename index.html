@@ -19,13 +19,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 
 <body>
   <header class="topbar">
     <div class="container">
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a class="brand" href="#top">
           <span class="dot" aria-hidden="true"></span>
           <span>Tarik Gungor</span>
@@ -39,13 +39,7 @@
             <a href="#contact">Contact</a>
           </div>
 
-          <button
-            class="themeToggle"
-            id="themeToggle"
-            type="button"
-            aria-label="Toggle theme"
-            title="Toggle theme"
-          >
+          <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
             <span class="icon" aria-hidden="true">☾</span>
             <span class="label">Dark</span>
           </button>
@@ -57,7 +51,6 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-wrap">
-
         <div class="hero-left">
           <h1>Tarik Gungor</h1>
           <div class="title">IT Support &amp; Infrastructure-Focused Technologist</div>
@@ -84,7 +77,6 @@
         <div class="hero-right">
           <img class="avatar" src="assets/img/profile.jpg" alt="Tarik Gungor" />
         </div>
-
       </div>
     </section>
 
@@ -92,8 +84,7 @@
       <div class="container">
         <h2>What I Do</h2>
         <p>
-          I support end users, build reliable infrastructure, and bring a practical operations mindset from
-          managing real-world business environments.
+          I support end users, build reliable infrastructure, and bring a practical operations mindset from managing real-world business environments.
         </p>
 
         <div class="grid">
@@ -200,10 +191,7 @@
               <div class="role">IT Specialist</div>
               <div class="when">BETA PREP • Toronto • 2024–Present</div>
             </div>
-            <p>
-              Supporting internal systems, operational workflows, and infrastructure reliability in a hybrid business
-              environment.
-            </p>
+            <p>Supporting internal systems, operational workflows, and infrastructure reliability in a hybrid business environment.</p>
           </div>
 
           <div class="item">
@@ -211,10 +199,7 @@
               <div class="role">IT Support Specialist</div>
               <div class="when">Bestof Floor LTD • 2023–Present</div>
             </div>
-            <p>
-              Network administration support, device management, and day-to-day technical troubleshooting across business
-              operations.
-            </p>
+            <p>Network administration support, device management, and day-to-day technical troubleshooting across business operations.</p>
           </div>
 
           <div class="item">
@@ -222,10 +207,7 @@
               <div class="role">IT Analyst (Internship)</div>
               <div class="when">Payment Source • 2023</div>
             </div>
-            <p>
-              Worked with ManageEngine Endpoint Central and mobile device management systems. Contributed to 50+ device
-              configurations and supported endpoint monitoring and structured device policy deployment.
-            </p>
+            <p>Worked with ManageEngine Endpoint Central and mobile device management systems. Contributed to 50+ device configurations and supported endpoint monitoring and structured device policy deployment.</p>
           </div>
         </div>
       </div>
@@ -242,9 +224,7 @@
               <div class="role">Computer Systems Technology (Advanced Diploma)</div>
               <div class="when">George Brown College • 2026–Ongoing</div>
             </div>
-            <p>
-              Focused on systems architecture, networking fundamentals, infrastructure, and applied technical labs.
-            </p>
+            <p>Focused on systems architecture, networking fundamentals, infrastructure, and applied technical labs.</p>
           </div>
 
           <div class="item">
@@ -252,10 +232,7 @@
               <div class="role">Computer &amp; Information Sciences (Support Services)</div>
               <div class="when">British Columbia Institute of Technology • 2022–2023</div>
             </div>
-            <p>
-              Practical training in Active Directory, network administration, device support, and enterprise IT
-              environments.
-            </p>
+            <p>Practical training in Active Directory, network administration, device support, and enterprise IT environments.</p>
           </div>
         </div>
       </div>
@@ -316,25 +293,22 @@
 
     // theme toggle
     const toggleBtn = document.getElementById("themeToggle");
-    const iconEl = toggleBtn?.querySelector(".icon");
-    const labelEl = toggleBtn?.querySelector(".label");
+    const iconEl = toggleBtn.querySelector(".icon");
+    const labelEl = toggleBtn.querySelector(".label");
 
     function applyTheme(mode) {
       const isLight = mode === "light";
       document.body.classList.toggle("light", isLight);
       localStorage.setItem("theme", isLight ? "light" : "dark");
-
-      if (iconEl) iconEl.textContent = isLight ? "☀" : "☾";
-      if (labelEl) labelEl.textContent = isLight ? "Light" : "Dark";
+      iconEl.textContent = isLight ? "☀" : "☾";
+      labelEl.textContent = isLight ? "Light" : "Dark";
     }
 
-    // load preference (default: dark)
     const saved = localStorage.getItem("theme");
     applyTheme(saved === "light" ? "light" : "dark");
 
-    toggleBtn?.addEventListener("click", () => {
-      const next = document.body.classList.contains("light") ? "dark" : "light";
-      applyTheme(next);
+    toggleBtn.addEventListener("click", () => {
+      applyTheme(document.body.classList.contains("light") ? "dark" : "light");
     });
   </script>
 </body>
