@@ -1,12 +1,16 @@
-/* Tarik Gungor — Premium Minimal (Dark/Light) */
+/* =========================================================
+   Tarik Gungor — Premium Minimal (Dark/Light) + Timeline
+   Single-file, clean, theme-aware
+   ========================================================= */
 
 /* =========================
-   Variables (Dark default)
+   Theme tokens (Dark default)
    ========================= */
 :root{
   --bg: #0e0e0e;
   --bg2: #0b0b0b;
   --panel: rgba(255,255,255,0.04);
+
   --text: #eaeaea;
   --muted: rgba(234,234,234,0.70);
   --line: rgba(255,255,255,0.10);
@@ -28,15 +32,18 @@
   --btn-primary-bg: linear-gradient(180deg, rgba(23,74,58,0.95), rgba(23,74,58,0.72));
   --btn-primary-border: rgba(23,74,58,0.55);
   --btn-primary-text: #eef7f3;
+
+  --focus: rgba(23,74,58,0.55);
 }
 
 /* =========================
-   Light theme overrides
+   Light overrides
    ========================= */
 body.light{
   --bg: #f5f6f7;
   --bg2: #ffffff;
   --panel: rgba(0,0,0,0.03);
+
   --text: #121212;
   --muted: rgba(18,18,18,0.62);
   --line: rgba(0,0,0,0.10);
@@ -51,6 +58,8 @@ body.light{
   --btn-primary-bg: linear-gradient(180deg, rgba(23,74,58,0.90), rgba(23,74,58,0.78));
   --btn-primary-border: rgba(23,74,58,0.35);
   --btn-primary-text: #ffffff;
+
+  --focus: rgba(23,74,58,0.35);
 }
 
 /* =========================
@@ -61,10 +70,9 @@ html{ scroll-behavior: smooth; }
 
 body{
   margin: 0;
-  color: var(--text);
   font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.55;
-
+  color: var(--text);
   background:
     radial-gradient(1200px 700px at 20% -10%, rgba(23,74,58,0.22), transparent 60%),
     radial-gradient(900px 600px at 85% 10%, rgba(23,74,58,0.10), transparent 55%),
@@ -79,9 +87,8 @@ a:hover{ color: inherit; }
   margin: 0 auto;
 }
 
-/* Accessible focus */
 :focus-visible{
-  outline: 3px solid rgba(23,74,58,0.55);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 10px;
 }
@@ -94,23 +101,15 @@ a:hover{ color: inherit; }
   top: 0;
   z-index: 50;
 
-  /* fallback first */
   background: rgba(14,14,14,0.75);
   border-bottom: 1px solid var(--line);
-
-  /* modern enhancement */
   backdrop-filter: blur(12px);
 }
 
-/* better background on light */
-body.light .topbar{
-  background: rgba(255,255,255,0.78);
-}
+body.light .topbar{ background: rgba(255,255,255,0.78); }
 
 @supports (background: color-mix(in srgb, white 70%, transparent)){
-  .topbar{
-    background: color-mix(in srgb, var(--bg2) 70%, transparent);
-  }
+  .topbar{ background: color-mix(in srgb, var(--bg2) 70%, transparent); }
 }
 
 .nav{
@@ -155,13 +154,13 @@ body.light .topbar{
 
 .navlinks a{
   color: var(--muted);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 14px;
 }
 
 .navlinks a:hover{ color: var(--text); }
 
-/* Theme toggle button */
+/* Theme toggle */
 .themeToggle{
   display: inline-flex;
   align-items: center;
@@ -173,7 +172,7 @@ body.light .topbar{
   background: var(--btn-bg);
   color: var(--btn-text);
 
-  font-weight: 800;
+  font-weight: 900;
   font-size: 13px;
   cursor: pointer;
   box-shadow: var(--shadow-soft);
@@ -280,7 +279,7 @@ body.light .hero::before{
 .hero .title{
   margin-top: 14px;
   color: var(--muted);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 16px;
   letter-spacing: 0.2px;
 }
@@ -291,13 +290,14 @@ body.light .hero::before{
   font-size: 18px;
   color: rgba(234,234,234,0.92);
 }
+
 body.light .hero .tagline{ color: rgba(18,18,18,0.85); }
 
 .hero .location{
   margin-top: 18px;
   color: var(--muted);
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .avatar{
@@ -358,33 +358,29 @@ body.light .hero .tagline{ color: rgba(18,18,18,0.85); }
   background: linear-gradient(180deg, rgba(31,95,74,0.95), rgba(31,95,74,0.78));
 }
 
-/* ===== Hero Trust Strip ===== */
+/* Hero trust pills */
 .hero-trust{
   margin-top: 20px;
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  opacity: 0.80;
+  opacity: 0.82;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .hero-trust span{
   padding: 6px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-
-  /* theme-aware */
   background: rgba(255,255,255,0.03);
   backdrop-filter: blur(4px);
 }
 
-body.light .hero-trust span{
-  background: rgba(0,0,0,0.04);
-}
+body.light .hero-trust span{ background: rgba(0,0,0,0.04); }
 
 /* =========================
-   Sections
+   Sections (generic)
    ========================= */
 .section{
   padding: 42px 0;
@@ -416,22 +412,15 @@ body.light .hero-trust span{
   padding: 18px;
   border-radius: var(--r);
   border: 1px solid var(--line);
-
-  /* fallback first */
   background: rgba(255,255,255,0.03);
   box-shadow: var(--shadow);
-
   transition: transform 140ms ease, border-color 140ms ease;
 }
 
-body.light .card{
-  background: rgba(255,255,255,0.85);
-}
+body.light .card{ background: rgba(255,255,255,0.85); }
 
 @supports (background: color-mix(in srgb, white 50%, transparent)){
-  .card{
-    background: color-mix(in srgb, var(--bg2) 55%, transparent);
-  }
+  .card{ background: color-mix(in srgb, var(--bg2) 55%, transparent); }
 }
 
 .card:hover{
@@ -440,9 +429,7 @@ body.light .card{
 }
 
 @supports (border-color: color-mix(in srgb, white 10%, black)){
-  .card:hover{
-    border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
-  }
+  .card:hover{ border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
 }
 
 .card h3{
@@ -467,11 +454,9 @@ body.light .card{
 .pill{
   font-size: 12px;
   font-weight: 900;
-
   color: rgba(234,234,234,0.82);
   border: 1px solid rgba(255,255,255,0.14);
   background: rgba(255,255,255,0.03);
-
   padding: 6px 10px;
   border-radius: var(--r2);
 }
@@ -494,7 +479,7 @@ body.light .pill.accent{
   color: rgba(18,18,18,0.82);
 }
 
-/* Experience list */
+/* Simple list cards (volunteer/education etc.) */
 .list{
   margin-top: 14px;
   display: grid;
@@ -505,19 +490,14 @@ body.light .pill.accent{
   padding: 16px;
   border-radius: var(--r);
   border: 1px solid var(--line);
-
   background: rgba(255,255,255,0.03);
   box-shadow: var(--shadow-soft);
 }
 
-body.light .item{
-  background: rgba(255,255,255,0.85);
-}
+body.light .item{ background: rgba(255,255,255,0.85); }
 
 @supports (background: color-mix(in srgb, white 50%, transparent)){
-  .item{
-    background: color-mix(in srgb, var(--bg2) 55%, transparent);
-  }
+  .item{ background: color-mix(in srgb, var(--bg2) 55%, transparent); }
 }
 
 .item .row{
@@ -531,7 +511,7 @@ body.light .item{
 
 .item .when{
   color: var(--muted);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 13px;
 }
 
@@ -542,10 +522,8 @@ body.light .item{
   margin-left: 10px;
   padding: 4px 10px;
   border-radius: 999px;
-
   border: 1px solid rgba(23,74,58,0.45);
   background: rgba(23,74,58,0.14);
-
   color: rgba(230,255,245,0.92);
   font-size: 12px;
   font-weight: 900;
@@ -556,6 +534,124 @@ body.light .badge{
   color: rgba(18,18,18,0.85);
   border-color: rgba(23,74,58,0.35);
   background: rgba(23,74,58,0.10);
+}
+
+/* =========================
+   EXPERIENCE TIMELINE (FIXED)
+   ========================= */
+
+.experience-section {
+  padding: 60px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 48px;
+  letter-spacing: -0.3px;
+}
+
+.timeline {
+  --line-x: 24px;      /* Çizginin soldan uzaklığı */
+  --line-width: 2px;   /* Çizgi kalınlığı */
+  --dot-size: 14px;    /* Nokta boyutu */
+  --content-gap: 40px; /* Çizgi ile metin arasındaki boşluk */
+
+  position: relative;
+  /* Tüm içeriği çizginin sağında toplayan ana boşluk */
+  padding-left: calc(var(--line-x) + var(--content-gap));
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--line-x);
+  width: var(--line-width);
+  background: rgba(0, 255, 180, 0.18);
+}
+
+body.light .timeline::before {
+  background: rgba(23, 74, 58, 0.22);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* NOKTA KONUMLANDIRMASI */
+.timeline-dot {
+  position: absolute;
+  /* Noktayı, .timeline'ın bıraktığı padding kadar sola (çizgiye) iter */
+  left: calc(-1 * var(--content-gap) - (var(--dot-size) / 2) + (var(--line-width) / 2));
+  top: 4px; /* Tarih metniyle dikey hizalama */
+
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: #00ffb4;
+  box-shadow: 0 0 14px rgba(0, 255, 180, 0.6);
+  z-index: 2;
+}
+
+body.light .timeline-dot {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(23, 74, 58, 0.35);
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #00ffb4;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+body.light .timeline-date {
+  color: var(--accent);
+}
+
+.timeline-content h3 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin: 0 0 6px; /* Marjinleri sıfırlayıp aşağıya boşluk verdik */
+}
+
+.timeline-meta {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.timeline-content li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 22px rgba(0, 255, 180, 0.9);
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+body.light .timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 18px rgba(23, 74, 58, 0.45);
 }
 
 /* =========================
@@ -586,7 +682,7 @@ body.light .badge{
 .footer-actions .sep{ opacity: 0.6; }
 
 .footer-actions a{
-  font-weight: 800;
+  font-weight: 900;
   font-size: 13px;
   color: var(--muted);
   border-bottom: 1px solid var(--line);
@@ -608,9 +704,13 @@ body.light .badge{
   .hero-wrap{ flex-direction: column-reverse; align-items: flex-start; }
   .avatar{ width: 130px; height: 130px; }
 
-  .nav{
-    align-items: flex-start;
+  .nav{ align-items: flex-start; }
+
+  .timeline{
+    margin-left: 6px;
+    padding-left: 14px;
   }
+  .timeline-item{ padding-left: 22px; }
 }
 
 /* =========================
@@ -620,5 +720,6 @@ body.light .badge{
   *{
     scroll-behavior: auto !important;
     transition: none !important;
+    animation: none !important;
   }
 }
