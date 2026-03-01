@@ -1,57 +1,61 @@
 <!-- =========================
-     TarikGungor.com — index.html
-     Sections: Topbar • Hero • What I Do • BCIT Projects • Experience • Volunteer • Education • Technical • Contact • Footer
+     index.html
      ========================= -->
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Tarik Gungor — IT Support & Infrastructure Specialist</title>
-  <meta name="description" content="Tarik Gungor is an IT Support & Infrastructure Specialist based in Toronto, Canada, focused on systems administration, networking, endpoint management, and practical business-driven IT operations." />
-  <meta name="theme-color" content="#0e0e0e" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon-v2.svg" />
   <link rel="canonical" href="https://tarikgungor.com/" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon-v2.svg" />
+  <meta
+    name="description"
+    content="Tarik Gungor is an IT Support & Infrastructure Specialist based in Toronto, Canada, focused on systems administration, networking, endpoint management, and practical business-driven IT operations."
+  />
+  <meta name="theme-color" content="#0e0e0e" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Tarik Gungor — IT Support & Infrastructure Specialist" />
-  <meta property="og:description" content="IT Support & Infrastructure Specialist based in Toronto, Canada. Focused on systems administration, networking, endpoint management, and practical business-driven IT operations." />
+  <meta
+    property="og:description"
+    content="IT Support & Infrastructure Specialist based in Toronto, Canada. Focused on systems administration, networking, endpoint management, and practical business-driven IT operations."
+  />
   <meta property="og:image" content="https://tarikgungor.com/assets/img/preview.jpg" />
   <meta property="og:url" content="https://tarikgungor.com/" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tarik Gungor — IT Support & Infrastructure Specialist" />
-  <meta name="twitter:description" content="IT Support & Infrastructure Specialist based in Toronto, Canada. Focused on systems administration, networking, endpoint management, and practical business-driven IT operations." />
+  <meta
+    name="twitter:description"
+    content="IT Support & Infrastructure Specialist based in Toronto, Canada. Focused on systems administration, networking, endpoint management, and practical business-driven IT operations."
+  />
   <meta name="twitter:image" content="https://tarikgungor.com/assets/img/preview.jpg" />
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Tarik Gungor",
-    "url":"https://tarikgungor.com/",
-    "image":"https://tarikgungor.com/assets/img/profile.jpg",
-    "jobTitle":"IT Support & Infrastructure Specialist",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Toronto",
-      "addressRegion":"Ontario",
-      "addressCountry":"Canada"
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tarik Gungor",
+    "url": "https://tarikgungor.com/",
+    "image": "https://tarikgungor.com/assets/img/profile.jpg",
+    "jobTitle": "IT Support & Infrastructure Specialist",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "Ontario",
+      "addressCountry": "Canada"
     },
-    "sameAs":[
+    "sameAs": [
       "https://linkedin.com/in/tarikgungor",
       "https://github.com/gungortarik"
     ]
   }
   </script>
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-635W5YR4GW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -60,7 +64,6 @@
     gtag('config', 'G-635W5YR4GW');
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -90,7 +93,13 @@
             <a href="#contact">Contact</a>
           </div>
 
-          <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <button
+            class="themeToggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
             <span class="icon" aria-hidden="true">☾</span>
             <span class="label">Dark</span>
           </button>
@@ -118,9 +127,15 @@
           <div class="actions">
             <a class="btn primary" href="#projects">View Projects</a>
             <a class="btn" href="#contact">Contact</a>
-            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
-            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" download>Download Resume</a>
+
+            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" target="_blank" rel="noopener">
+              View Resume
+            </a>
+            <a class="btn" href="assets/docs/Tarik_Gungor_Resume.pdf" download>
+              Download Resume
+            </a>
           </div>
+        </div>
 
         <div class="hero-right">
           <img class="avatar" src="assets/img/profile.jpg" alt="Tarik Gungor" />
@@ -134,7 +149,9 @@
     <section class="section" id="what">
       <div class="container">
         <h2>What I Do</h2>
-        <p>I support end users, build reliable infrastructure, and document systems clearly so teams can review and reuse the work.</p>
+        <p>
+          I support end users, build reliable infrastructure, and document systems clearly so teams can review and reuse the work.
+        </p>
 
         <div class="grid">
           <div class="card">
@@ -184,14 +201,15 @@
     </section>
 
     <!-- =========================
-         Projects (BCIT-first)
+         Projects
          ========================= -->
     <section class="section" id="projects">
       <div class="container">
         <h2>Selected Projects</h2>
-        <p>BCIT labs and Capstone — built in VMs (Hyper-V + VMware/ESXi) with documentation and repeatable environments.</p>
+        <p>Hands-on infrastructure projects focused on reliability, design clarity, and practical implementation.</p>
 
         <div class="grid">
+          <!-- BCIT / Lab-forward -->
           <div class="card">
             <h3>Capstone: Virtualized Enterprise Lab</h3>
             <p>NAT/Firewall routing, multi-DC design, Linux DHCP, DNS, SAN/iSCSI, and failover testing.</p>
@@ -200,11 +218,6 @@
               <span class="pill">AD DS</span>
               <span class="pill">iSCSI/SAN</span>
               <span class="pill">Failover</span>
-            </div>
-            <div class="links">
-              <a class="link" href="#" aria-disabled="true">Case Study (soon)</a>
-              <span class="dotsep" aria-hidden="true">•</span>
-              <a class="link" href="#" aria-disabled="true">Topology</a>
             </div>
           </div>
 
@@ -216,9 +229,6 @@
               <span class="pill">GPO</span>
               <span class="pill">Security Groups</span>
             </div>
-            <div class="links">
-              <a class="link" href="#" aria-disabled="true">Write-up (soon)</a>
-            </div>
           </div>
 
           <div class="card">
@@ -229,9 +239,6 @@
               <span class="pill">Zones</span>
               <span class="pill">Windows Server</span>
             </div>
-            <div class="links">
-              <a class="link" href="#" aria-disabled="true">Write-up (soon)</a>
-            </div>
           </div>
 
           <div class="card">
@@ -241,9 +248,6 @@
               <span class="pill accent">DHCP</span>
               <span class="pill">Linux</span>
               <span class="pill">Validation</span>
-            </div>
-            <div class="links">
-              <a class="link" href="#" aria-disabled="true">Write-up (soon)</a>
             </div>
           </div>
 
@@ -256,43 +260,65 @@
               <span class="pill">RAID</span>
               <span class="pill">Resilience</span>
             </div>
-            <div class="links">
-              <a class="link" href="#" aria-disabled="true">Write-up (soon)</a>
-            </div>
           </div>
 
           <div class="card">
             <h3>Failover Cluster: File Servers + Shared Storage</h3>
-            <p>Cluster design, shared storage (VHD Set), and planned failover testing for availability.</p>
+            <p>Cluster design, shared storage (VHD Set), and failover validation for availability.</p>
             <div class="meta">
               <span class="pill accent">Failover Cluster</span>
               <span class="pill">File Services</span>
               <span class="pill">VHD Set</span>
             </div>
-            <div class="links">
-              <a class="link" href="#" aria-disabled="true">Write-up (soon)</a>
-            </div>
           </div>
 
           <div class="card">
             <h3>VMware ESXi: Nested Build &amp; Management</h3>
-            <p>VMware workstation + nested ESXi environment setup for lab workflows and repeatability.</p>
+            <p>VMware Workstation + nested ESXi environment setup for lab workflows and repeatability.</p>
             <div class="meta">
               <span class="pill accent">VMware</span>
               <span class="pill">ESXi</span>
               <span class="pill">Lab Build</span>
             </div>
-            <div class="links">
-              <a class="link" href="#" aria-disabled="true">Write-up (soon)</a>
-            </div>
           </div>
 
-          <div class="card subtle">
+          <div class="card">
             <h3>Other</h3>
             <p>Personal Website (this site) — minimal, premium, and documentation-driven.</p>
             <div class="meta">
               <span class="pill">HTML/CSS</span>
               <span class="pill">GitHub Pages</span>
+            </div>
+          </div>
+
+          <!-- Additional (legacy) -->
+          <div class="card">
+            <h3>Home Server Infrastructure</h3>
+            <p>Private cloud and media stack planning with a reliability-first mindset.</p>
+            <div class="meta">
+              <span class="pill accent">Architecture</span>
+              <span class="pill">Storage</span>
+              <span class="pill">Remote Access</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Café Network Segmentation</h3>
+            <p>Staff vs guest network separation with operational and security considerations.</p>
+            <div class="meta">
+              <span class="pill accent">Networking</span>
+              <span class="pill">Security</span>
+              <span class="pill">Wi-Fi</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Endpoint Management Lab</h3>
+            <p>Device configuration, monitoring, and policy deployment using Endpoint Central.</p>
+            <div class="meta">
+              <span class="pill accent">Endpoint</span>
+              <span class="pill">Device Config</span>
+              <span class="pill">Policy</span>
             </div>
           </div>
         </div>
@@ -302,66 +328,63 @@
     <!-- =========================
          Experience (Timeline)
          ========================= -->
-    <section id="experience" class="experience">
+    <section id="experience" class="experience-section">
       <div class="container">
-        <div class="section-head">
-          <h2>Experience</h2>
-          <p>Roles focused on support, infrastructure reliability, and hands-on operations.</p>
-        </div>
+        <h2 class="section-title">Experience</h2>
 
-        <div class="timeline" aria-label="Experience timeline">
-          <article class="t-item">
-            <div class="t-dot" aria-hidden="true"></div>
-            <div class="t-body">
-              <div class="t-date">Dec 2024 – Present</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Dec 2024 – Present</span>
               <h3>IT Specialist — BETA PREP</h3>
-              <div class="t-meta">Contract · Hybrid · Toronto, ON</div>
+              <p class="timeline-meta">Contract · Hybrid · Toronto, ON</p>
               <ul>
                 <li>Infrastructure &amp; endpoint oversight for fulfillment operations</li>
                 <li>Operational IT support across warehouse systems</li>
               </ul>
             </div>
-          </article>
+          </div>
 
-          <article class="t-item">
-            <div class="t-dot" aria-hidden="true"></div>
-            <div class="t-body">
-              <div class="t-date">Dec 2023 – Present</div>
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Dec 2023 – Present</span>
               <h3>Information Technology Technician — Torontonian Flooring</h3>
-              <div class="t-meta">Contract · Hybrid · Toronto, ON</div>
+              <p class="timeline-meta">Contract · Hybrid · Toronto, ON</p>
               <ul>
                 <li>On-site IT support &amp; device configuration</li>
                 <li>Network troubleshooting &amp; systems support</li>
               </ul>
             </div>
-          </article>
+          </div>
 
-          <article class="t-item">
-            <div class="t-dot" aria-hidden="true"></div>
-            <div class="t-body">
-              <div class="t-date">Sep 2023 – Present</div>
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Sep 2023 – Present</span>
               <h3>IT Support Specialist — Bestof Floor LTD</h3>
-              <div class="t-meta">Contract · Hybrid · Toronto, ON</div>
+              <p class="timeline-meta">Contract · Hybrid · Toronto, ON</p>
               <ul>
                 <li>Network administration &amp; segmentation</li>
                 <li>Endpoint configuration &amp; support</li>
               </ul>
             </div>
-          </article>
+          </div>
 
-          <article class="t-item">
-            <div class="t-dot" aria-hidden="true"></div>
-            <div class="t-body">
-              <div class="t-date">Apr 2023 – Jul 2023</div>
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Apr 2023 – Jul 2023</span>
               <h3>IT Analyst — Payment Source</h3>
-              <div class="t-meta">Internship · Hybrid · Toronto, ON</div>
+              <p class="timeline-meta">Internship · Hybrid · Toronto, ON</p>
               <ul>
                 <li>Managed Endpoint Central &amp; Mobile Device Management</li>
                 <li>Deployed 50+ device configurations</li>
                 <li>System monitoring &amp; hardware support</li>
               </ul>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -380,7 +403,9 @@
               <div class="role">IT Analyst <span class="badge">Volunteer</span></div>
               <div class="when">CentreCanada Newcomer Services Society • Oct 2023 – Present</div>
             </div>
-            <p>Supporting IT operations and troubleshooting with an emphasis on reliability and user support.</p>
+            <p>
+              Supporting IT operations and troubleshooting for community services, with an emphasis on reliability and user support.
+            </p>
           </div>
         </div>
       </div>
@@ -408,39 +433,9 @@
               <div class="role">Computer &amp; Information Sciences (Support Services)</div>
               <div class="when">British Columbia Institute of Technology • 2023</div>
             </div>
-            <p>Practical training in AD DS, network administration, device support, and enterprise-style lab environments.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         Technical Focus
-         ========================= -->
-    <section class="section" id="technical">
-      <div class="container">
-        <h2>Technical Focus</h2>
-        <p>Core technical areas and hands-on exposure.</p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Windows Server</h3>
-            <p>AD DS, DNS/DHCP, policy patterns, and structured role-based configuration.</p>
-          </div>
-
-          <div class="card">
-            <h3>Virtualization</h3>
-            <p>Hyper-V labs, VMware Workstation workflows, nested ESXi setups, and repeatable environment builds.</p>
-          </div>
-
-          <div class="card">
-            <h3>Storage &amp; Availability</h3>
-            <p>iSCSI/SAN fundamentals, RAID concepts, and failover testing with shared storage models.</p>
-          </div>
-
-          <div class="card">
-            <h3>Operations &amp; Support</h3>
-            <p>Troubleshooting, endpoint tooling exposure, documentation, and real-world environment reliability.</p>
+            <p>
+              Practical training in Active Directory, network administration, device support, and enterprise IT environments.
+            </p>
           </div>
         </div>
       </div>
@@ -479,14 +474,12 @@
   </main>
 
   <!-- =========================
-       Scripts: year + theme toggle
+       Scripts
        ========================= -->
   <script>
-    // footer year
     const yearEl = document.getElementById("y");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // theme toggle
     const toggleBtn = document.getElementById("themeToggle");
     const iconEl = toggleBtn?.querySelector(".icon");
     const labelEl = toggleBtn?.querySelector(".label");
